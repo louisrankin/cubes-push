@@ -14,14 +14,23 @@ class Cube {
   void display() {
     
     location.add(velocity);
+    
+    pushMatrix();
     translate(location.x, location.y, location.z);
-    box(10);
+    box(50);
+    popMatrix();
   }
   
   // make cube go backwards
   void explode() {
     velocity.z = -5;
   }
+  
+  void mouseClicked() {
+    explode();
+  }
+
+  
   
   // end of class
 }
