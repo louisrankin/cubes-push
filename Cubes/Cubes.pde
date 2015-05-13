@@ -5,7 +5,7 @@ void setup() {
   background(0);
   lights();
   
-  cube = new Cube(250,250,100);
+  cube = new Cube(250,250,0);
 }
 
 void draw() {
@@ -13,5 +13,6 @@ void draw() {
 }
 
 void mouseClicked() {
-  //
+  cube.explode();
 }
+
