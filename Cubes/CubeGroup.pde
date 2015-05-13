@@ -23,10 +23,10 @@ class CubeGroup {
   
   void reset() {
     int i = 0;
-    for (int a = 0; a < 10; a++) {
-      for (int b = 0; b < 10; b++) {
+    for (int a = 0; a < numberOfRows; a++) {
+      for (int b = 0; b < numberOfRows; b++) {
         
-        cubes.get(i).reset(a*50, b*50, 0);
+        cubes.get(i).reset(a*sizeOfCube, b*sizeOfCube, 0);
         i++;
       }
     }

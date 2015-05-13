@@ -1,17 +1,20 @@
 
 CubeGroup cubeGroup;
+int size = 1000;
+int numberOfRows = 9;
+int sizeOfCube = 100;
 
 void setup() {
-  size(500, 500, P3D);
+  size(size, size, P3D);
   background(0);
   lights();
   
   
   cubeGroup = new CubeGroup();
   
-  for (int a = 0; a < 10; a++) {
-    for (int b = 0; b < 10; b++) {
-      Cube c = new Cube(a*50, b*50, 0);
+  for (int a = 0; a < numberOfRows; a++) {
+    for (int b = 0; b < numberOfRows; b++) {
+      Cube c = new Cube(a*sizeOfCube, b*sizeOfCube, 0);
       cubeGroup.addCube(c);
     }
   }
@@ -23,7 +26,7 @@ void setup() {
 void draw() {
   
   background(0);
-  translate(40,40,0);
+  translate(sizeOfCube,sizeOfCube,0);
   
   cubeGroup.run();
 }

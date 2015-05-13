@@ -18,7 +18,7 @@ class Cube {
     
     pushMatrix();
     translate(location.x, location.y, location.z);
-    box(50);
+    box(sizeOfCube);
     popMatrix();
   }
   
