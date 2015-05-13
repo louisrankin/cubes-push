@@ -15,9 +15,20 @@ class CubeGroup {
     cubes.add(c);
   }
   
-  void explode() {
+  void explode(float x, float y) {
     for (Cube c : cubes) {
-      c.explode(mouseX,mouseY);
+      c.explode(x,y);
+    }
+  }
+  
+  void reset() {
+    int i = 0;
+    for (int a = 0; a < 10; a++) {
+      for (int b = 0; b < 10; b++) {
+        
+        cubes.get(i).reset(a*50, b*50, 0);
+        i++;
+      }
     }
   }
 

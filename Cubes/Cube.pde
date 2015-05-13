@@ -3,6 +3,7 @@ class Cube {
   // variables
   PVector location;
   PVector velocity;
+  float speed = 0.01;
   
   // init
   Cube(float x, float y, float z) {
@@ -21,17 +22,37 @@ class Cube {
     popMatrix();
   }
   
+  void reset(float x, float y, float z) {
+    
+    location = new PVector(x, y, z);
+    velocity = new PVector(0, 0, 0);
+  }
+  
   // make cube go backwards
-  void explode(mouseX, mouseY) {
-    PVector mouse = new PVector(mouseX, mouseY, 0);
+  void explode(float x, float y) {
+    PVector mouse = new PVector(x, y, 0);
+
+    float distance = (500 - dist(location.x, location.y, mouse.x, mouse.y)) * speed;
     
-    println(mouse.x);
-    println(mouse.y);
-    println(location.x);
-    println(location.y);
+    velocity.z = -distance;
+    
+    if (mouse.x < location.x) {
+      float xdistance = location.x - mouse.x;
+      velocity.x = xdistance * speed;
+    } else {
+      float xdistance = mouse.x - location.x;
+      velocity.x = -xdistance * speed;
+    }
     
     
-    velocity.z = -5;
+    if (mouse.y < location.y) {
+      float ydistance = location.y - mouse.y;
+      velocity.y = ydistance * speed;
+    } else {
+      float ydistance = mouse.y - location.y;
+      velocity.y = -ydistance * speed;
+    }
+    
   }
   
   

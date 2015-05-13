@@ -29,5 +29,12 @@ void draw() {
 }
 
 void mouseClicked() {
+  if (mouseButton == LEFT) {
     cubeGroup.explode(mouseX,mouseY);
+  } else if (mouseButton == RIGHT) {
+    cubeGroup.reset();
+  } else {
+    println("mouse button error");
   }
+  
+}
