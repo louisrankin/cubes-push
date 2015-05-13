@@ -3,6 +3,7 @@ CubeGroup cubeGroup;
 int size = 1000;
 int numberOfRows = 9;
 int sizeOfCube = 100;
+float spin = 0.0;
 
 void setup() {
   size(size, size, P3D);
@@ -20,13 +21,14 @@ void setup() {
   }
     
   
-  
 }
 
 void draw() {
   
+
+  
   background(0);
-  translate(sizeOfCube,sizeOfCube,0);
+  translate(sizeOfCube,sizeOfCube,-300);
   
   cubeGroup.run();
 }
@@ -40,4 +42,14 @@ void mouseClicked() {
     println("mouse button error");
   }
   
+}
+
+void keyPressed() {
+  if (key == 'a') {
+    println("l");
+  } else if (key == 'd') {
+    println("r");
+  } else {
+    println("key pressed error");
+  }
 }
