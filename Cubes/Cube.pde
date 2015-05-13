@@ -22,13 +22,19 @@ class Cube {
   }
   
   // make cube go backwards
-  void explode() {
+  void explode(mouseX, mouseY) {
+    PVector mouse = new PVector(mouseX, mouseY, 0);
+    
+    println(mouse.x);
+    println(mouse.y);
+    println(location.x);
+    println(location.y);
+    
+    
     velocity.z = -5;
   }
   
-  void mouseClicked() {
-    explode();
-  }
+  
 
   
   

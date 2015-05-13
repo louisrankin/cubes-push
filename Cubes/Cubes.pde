@@ -21,15 +21,13 @@ void setup() {
 }
 
 void draw() {
-  translate(40,40,0);
   
-  for (int a = 0; a < 10; a++) {
-    for (int b = 0; b < 10; b++) {
-      cubes[a][b].display();
-    }
-  }
+  background(0);
+  translate(40,40,0);
   
   cubeGroup.run();
 }
 
-
+void mouseClicked() {
+    cubeGroup.explode(mouseX,mouseY);
+  }

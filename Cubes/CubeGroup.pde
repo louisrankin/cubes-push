@@ -1,18 +1,24 @@
 class CubeGroup {
   ArrayList<Cube> cubes;
   
-  School() {
+  CubeGroup() {
     cubes = new ArrayList<Cube>();
   }
   
   void run() {
     for (Cube c : cubes) {
-      c.display(cubes);
+      c.display();
     }
   }
   
   void addCube(Cube c) {
     cubes.add(c);
+  }
+  
+  void explode() {
+    for (Cube c : cubes) {
+      c.explode(mouseX,mouseY);
+    }
   }
 
 }
