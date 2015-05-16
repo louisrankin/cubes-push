@@ -1,4 +1,3 @@
-
 CubeGroup cubeGroup;
 int size = 1000;
 int numberOfRows = 9;
@@ -9,7 +8,7 @@ void setup() {
   size(size, size, P3D);
   background(0);
   // noStroke();
-  lights();
+  
   
   
   cubeGroup = new CubeGroup();
@@ -25,12 +24,9 @@ void setup() {
 }
 
 void draw() {
-  
-
-  
+  lights();
   background(0);
   translate(sizeOfCube,sizeOfCube,0);
-  
   cubeGroup.run();
 }
 

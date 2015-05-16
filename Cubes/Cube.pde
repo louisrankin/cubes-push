@@ -36,8 +36,8 @@ class Cube {
     
     pushMatrix();
     translate(location.x, location.y, location.z);
-    rotateX(spin.x);
-    rotateY(spin.y);
+    rotateX(spin.y);
+    rotateY(spin.z);
     box(sizeOfCube);
     popMatrix();
   }
