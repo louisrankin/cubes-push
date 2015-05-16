@@ -3,11 +3,12 @@ CubeGroup cubeGroup;
 int size = 1000;
 int numberOfRows = 9;
 int sizeOfCube = 100;
-float spin = 0.0;
+
 
 void setup() {
   size(size, size, P3D);
   background(0);
+  // noStroke();
   lights();
   
   
@@ -28,7 +29,7 @@ void draw() {
 
   
   background(0);
-  translate(sizeOfCube,sizeOfCube,-300);
+  translate(sizeOfCube,sizeOfCube,0);
   
   cubeGroup.run();
 }
